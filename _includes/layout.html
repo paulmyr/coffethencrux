@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 
-		<title>{{ title | default: "My Blog" }}</title>
+		<title>{{ title | default: "paulmyr" }}</title>
     <style>
     @import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css');
 
@@ -251,6 +251,37 @@
 
     a.see-more:visited {
       color: var(--subtext0);
+    }
+
+    /* Main content headings */
+    .main-content h2 {
+      font-family: "Special Elite", system-ui;
+      color: var(--mauve);
+    }
+
+    /* Post date */
+    .post-date {
+      font-size: 0.85rem;
+      color: var(--subtext0);
+      margin-top: -0.5rem;
+    }
+
+    /* Social icon links */
+    .social-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    a.social-icon,
+    a.social-icon:visited {
+      color: var(--subtext0);
+      transition: color 0.2s ease, transform 0.2s ease;
+      text-decoration: none;
+    }
+
+    a.social-icon:hover {
+      color: var(--mauve);
+      transform: translateY(-2px);
     }
 
     /* Sidebar link list custom markers */
@@ -499,7 +530,7 @@
           <a class="badge" href=""><img src="/assets/badges/valid-html5.gif" width="88" height="31"></a>
         </div>
       </div>
-      <p class="footer-text">&copy; 2026</p>
+      <p class="footer-text">&copy; 2025 - 2026 Paul Mayer</p>
     </footer>
 
     <script>
