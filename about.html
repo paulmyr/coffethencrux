@@ -3,33 +3,56 @@ layout: layout.html
 title: About - paulmyr
 ---
 
-<div class="home-grid">
-  <aside class="sidebar">
-    {% include "sidebar-about.html" %}
-    {% include "sidebar-links.html" %}
-  </aside>
-  <section class="main-content">
-    <h2>Vita</h2>
-
-    <h3>Education</h3>
-    <p><strong>M.Sc. Computer Science</strong> — KTH Royal Institute of Technology, Stockholm (2024 - present)</p>
-    <p><strong>B.Sc. Computer Science</strong> — University of Stuttgart (2017 - 2023)<br>
-    Thesis: "Distributed Deep Reinforcement Learning for Learn-To-Optimize"</p>
-
-    <h3>Experience</h3>
-    <p><strong>Data Scientist</strong> — Bosch GmbH<br>
-    Anomaly detection using ML in multi-dimensional time-series data. Building digital twins.</p>
-    <p><strong>Working Student &amp; Intern</strong> — Iteratec GmbH (2020 - 2022)<br>
-    Full-stack development with emphasis on front-end technologies.</p>
-    <p><strong>Tutor</strong> — University of Stuttgart<br>
-    Theoretical Computer Science courses.</p>
-
-    <h3>Skills</h3>
-    <p><strong>Languages:</strong> Python, Java, TypeScript, C/C++, Kotlin, Scala</p>
-    <p><strong>Tools:</strong> TensorFlow, PySpark, Tableau, Spring Boot, React, Docker, Kubernetes</p>
-    <p><strong>Spoken:</strong> German (native), English (fluent)</p>
-
-    <h3>Volunteering</h3>
-    <p>Climbing coach for kids (ages 8-12), routesetter, and IT infrastructure at Kletterzentrum Stuttgart. Holds a National Coaching License.</p>
-  </section>
+<h2>About me</h2>
+<div class="about-intro">
+  <img class="profile-pic" src="/assets/profile.jpg" alt="Paul Mayer">
+  <p>
+    Hi, I'm Paul. I spend a lot of time thinking about climbing.
+    Oh, and I do something with computers.<br>
+    I traced some of my life steps below, sometimes more up to date than not.
+  </p>
 </div>
+
+<h2>Vita</h2>
+
+<h3>Education</h3>
+<p><strong>M.Sc. Computer Science</strong> (Scientific & High-Performance Computing) — KTH Royal Institute of Technology, Stockholm (2024 - 2026)<br>
+Selected Coursework: <a href="https://www.kth.se/student/kurser/kurs/DD2356?l=en">Methods in HPC</a>, <a href="https://www.kth.se/student/kurser/kurs/DD2363?l=en">Scientific Computing</a>, <a href="https://www.kth.se/student/kurser/kurs/DD2365?l=en">Advanced CFD</a>, <a href="https://www.kth.se/student/kurser/kurs/FSF3565?l=en">Modern C++ for Scientific Computing</a>, <a href="https://www.kth.se/student/kurser/kurs/DD2360?l=en">Applied GPU Programming</a>, <a href="https://www.kth.se/student/kurser/kurs/DD2435?l=en">Computational Biology / Neuroscience</a></p>
+<p><strong>B.Sc. Computer Science</strong> — University of Stuttgart (2017 - 2023)<br>
+Thesis: <a href="https://www.paulmyr.de/pdf/bachelor_thesis_paulmyr.pdf">"Distributed Deep Reinforcement Learning for Learn-To-Optimize"</a></p>
+
+<h3>Work</h3>
+<p><strong>Data Scientist</strong> — Bosch (2023 - 2024)<br>
+Anomaly detection using RNNs in multidimensional time-series data. Building digital twin sensors with TensorFlow. Dashboards, visualisations and big data analysis.</p>
+<p><strong>Software Engineering Intern & Working Student</strong> — Iteratec (2020 - 2022)<br>
+Full-stack development in customer projects using Java, TypeScript, SQL. Maintaining and monitoring micro-services in Kubernetes cloud environments.</p>
+
+<h3>Projects</h3>
+<p><strong>Implementing AdEx Neuron Model in <a href="https://jaxley.readthedocs.io/en/latest/">Jaxley</a></strong> (<a href="https://www.paulmyr.de/pdf/differentiable_adex.pdf">pdf</a>, <a href="https://github.com/jaxleyverse/jaxley/pull/780">PR</a>)</p>
+<ul>
+  <li>Implementation of Adaptive Exponential Leaky Integrate-and-Fire model in Jaxley to enable gradient-based parameter optimisation techniques. Foundation for my Master Thesis.</li>
+  <li>Will be extended into tool to enable model tuning for large scale bio-physical neuron simulations.</li>
+</ul>
+<p><strong>Finite Volume Simulation in Python</strong> (<a href="https://www.paulmyr.de/posts/optimising_fv_simulation/pdf/report-project-rishi-paul.pdf">pdf</a>, <a href="https://github.com/paulmyr/DD2358-HPC25/tree/master/10_project_rishi_paul">github</a>)</p>
+<ul>
+  <li>Optimisations of a 2D shear layer fluid simulation using the Finite Volume method written in Python.</li>
+  <li>Achieved up to 9x runtime speedup on Apple's M1 chipset using Metal accelerator.</li>
+  <li>Approaches included shared and non-shared memory distribution strategies using C, Cython and Dask.</li>
+</ul>
+<p><strong>Optimised 1D Finite Differences in C</strong> (<a href="https://www.paulmyr.de/pdf/methods_in_hpc_final_project.pdf">pdf</a>, <a href="https://github.com/paulmyr/DD2356-MethodsHPC/tree/master/5_project">github</a>)</p>
+<ul>
+  <li>Profiling and performance optimisations of a 1D electromagnetic FDTD simulation written in C.</li>
+  <li>Achieved over 60x performance speedup. Approaches included shared-memory (OpenMP), non-shared-memory (MPI) and hybrid methods as well as heterogeneous computing using GPU accelerators.</li>
+  <li>Performed and verified on <a href="https://www.pdc.kth.se/hpc-services/computing-systems/dardel-hpc-system/about-the-dardel-system-1.1053338">Dardel</a> located at the PDC Center for High Performance Computing.</li>
+</ul>
+
+<h3>Teaching</h3>
+<p><strong>Teaching Assistant</strong> — 2018-2020 (Stuttgart), 2025 (Stockholm)</p>
+<ul>
+  <li><a href="https://www.kth.se/student/kurser/kurs/DD2440?l=en">Advanced Algorithms</a> (KTH - Division of Theoretical Computer Science)</li>
+  <li><a href="https://www.kth.se/student/kurser/kurs/DD2257?l=en">Visualisation</a> (KTH - Division of Computational Science and Technology, Spring 2025)</li>
+  <li><a href="https://fmi.uni-stuttgart.de/ti/teaching/w18/ti1/">Theoretical Computer Science</a> (Institut für Formale Methoden der Informatik, Universität Stuttgart)</li>
+</ul>
+
+<h3>Volunteering</h3>
+<p>Climbing coach for kids (ages 8-12), routesetter, and IT infrastructure at Kletterzentrum Stuttgart. Holds a National Coaching License.</p>

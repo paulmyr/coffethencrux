@@ -1,0 +1,19 @@
+---
+layout: layout.html
+title: Gallery - paulmyr
+permalink: /gallery/
+---
+
+<h2>Some unsorted route-setting photo dump</h2>
+
+{% if gallery.size > 0 %}
+<div class="gallery-grid">
+  {% for img in gallery %}
+  <a href="{{ img.src }}" class="gallery-item" target="_blank">
+    <img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy">
+  </a>
+  {% endfor %}
+</div>
+{% else %}
+<p>Nothing here yet.</p>
+{% endif %}

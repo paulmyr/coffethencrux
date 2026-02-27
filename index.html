@@ -2,16 +2,30 @@
 layout: layout.html
 ---
 
-<div class="home-grid">
-  <aside class="sidebar">
-    {% include "sidebar-about.html" %}
-    {% include "sidebar-links.html" %}
-  </aside>
-  <section class="main-content">
-    <h2>Blog</h2>
-    <div class="card">
-      <h3><a href="/blog/post-1/">Optimising a Python Finite Volume Simulation</a></h3>
-      <p class="post-date">April 28, 2025</p>
-    </div>
-  </section>
+{% for page in collections.all %}{% if page.url == "/blog/" %}
+<div class="preview-section">
+  <div class="preview-fade">{{ page.templateContent }}</div>
+  <a class="see-more" href="/blog/">see more</a>
 </div>
+{% endif %}{% endfor %}
+
+{% for page in collections.all %}{% if page.url == "/projects/" %}
+<div class="preview-section">
+  <div class="preview-fade preview-short">{{ page.templateContent }}</div>
+  <a class="see-more" href="/projects/">see more</a>
+</div>
+{% endif %}{% endfor %}
+
+{% for page in collections.all %}{% if page.url == "/gallery/" %}
+<div class="preview-section">
+  <div class="preview-fade">{{ page.templateContent }}</div>
+  <a class="see-more" href="/gallery/">see more</a>
+</div>
+{% endif %}{% endfor %}
+
+{% for page in collections.all %}{% if page.url == "/links/" %}
+<div class="preview-section">
+  <div class="preview-fade">{{ page.templateContent }}</div>
+  <a class="see-more" href="/links/">see more</a>
+</div>
+{% endif %}{% endfor %}

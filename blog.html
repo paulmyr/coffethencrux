@@ -1,0 +1,27 @@
+---
+layout: layout.html
+title: Blog - paulmyr
+permalink: /blog/
+---
+
+<h2>Blog</h2>
+<pre class="under-construction">
+ This is still WIP...
+
+　　　　　　　　　　ｒ＠
+ニニニニヽ　　　/ /|｜
+　　　　　 ∥.　 / /　|｜
+0( ｡дﾟ) ∥ 　/ / 　|｜
+]( つ¶つ¶　　/ / 　 r―､
+ﾄ┳ヽ厂￣`/ /　　　| 　|
+｢￣￣￣L/_/　　　　jjjjj
+（◎￣◎)三)=)三)
+
+  !UNDER CONSTRUCTION!  
+</pre>
+{% for post in collections.post | reverse %}
+<div class="card blog-card">
+  <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+  <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+</div>
+{% endfor %}

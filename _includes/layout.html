@@ -9,463 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 
 		<title>{{ title | default: "paulmyr" }}</title>
-    <style>
-    @import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css');
-
-    body {
-      color: var(--text);
-      background-color: var(--base);
-      accent-color: var(--mauve);
-      caret-color: var(--mauve);
-      transition: color 0.3s ease, background-color 0.3s ease;
-      border-color: var(--rosewater);
-    }
-
-    a {
-      color: var(--blue);
-    }
-
-    a:hover {
-      color: var(--sky);
-      cursor: pointer;
-    }
-
-    button:hover{
-    cursor: pointer;
-    }
-
-    .btn-toggle {
-      background: none;
-      border: none;
-      color: var(--text);
-      font-size: 1.2rem;
-    }
-
-    .light-theme .icon-sun { display: none; }
-    .light-theme .icon-moon { display: inline; }
-
-    .dark-theme .icon-sun { display: inline; }
-    .dark-theme .icon-moon { display: none; }
-
-    a:visited {
-      color: var(--lavender);
-    }
-
-    ::selection {
-      background-color: var(--surface2);
-      color: var(--text);
-    }
-
-    code {
-      background-color: var(--surface0);
-      color: var(--peach);
-    }
-
-    pre {
-      background-color: var(--mantle);
-      transition: color 0.3s ease, background-color 0.3s ease;
-      color: var(--text);
-    }
-
-    blockquote {
-      border-left-color: var(--mauve);
-      color: var(--subtext1);
-    }
-
-    hr {
-      border-color: var(--surface1);
-    }
-
-    .dark-theme {
-      --rosewater: var(--ctp-mocha-rosewater);
-      --flamingo: var(--ctp-mocha-flamingo);
-      --pink: var(--ctp-mocha-pink);
-      --mauve: var(--ctp-mocha-mauve);
-      --red: var(--ctp-mocha-red);
-      --maroon: var(--ctp-mocha-maroon);
-      --peach: var(--ctp-mocha-peach);
-      --yellow: var(--ctp-mocha-yellow);
-      --green: var(--ctp-mocha-green);
-      --teal: var(--ctp-mocha-teal);
-      --sky: var(--ctp-mocha-sky);
-      --sapphire: var(--ctp-mocha-sapphire);
-      --blue: var(--ctp-mocha-blue);
-      --lavender: var(--ctp-mocha-lavender);
-      --text: var(--ctp-mocha-text);
-      --subtext1: var(--ctp-mocha-subtext1);
-      --subtext0: var(--ctp-mocha-subtext0);
-      --overlay2: var(--ctp-mocha-overlay2);
-      --overlay1: var(--ctp-mocha-overlay1);
-      --overlay0: var(--ctp-mocha-overlay0);
-      --surface2: var(--ctp-mocha-surface2);
-      --surface1: var(--ctp-mocha-surface1);
-      --surface0: var(--ctp-mocha-surface0);
-      --base: var(--ctp-mocha-base);
-      --mantle: var(--ctp-mocha-mantle);
-      --crust: var(--ctp-mocha-crust);
-    }
-
-    .light-theme {
-      --rosewater: var(--ctp-latte-rosewater);
-      --flamingo: var(--ctp-latte-flamingo);
-      --pink: var(--ctp-latte-pink);
-      --mauve: var(--ctp-latte-mauve);
-      --red: var(--ctp-latte-red);
-      --maroon: var(--ctp-latte-maroon);
-      --peach: var(--ctp-latte-peach);
-      --yellow: var(--ctp-latte-yellow);
-      --green: var(--ctp-latte-green);
-      --teal: var(--ctp-latte-teal);
-      --sky: var(--ctp-latte-sky);
-      --sapphire: var(--ctp-latte-sapphire);
-      --blue: var(--ctp-latte-blue);
-      --lavender: var(--ctp-latte-lavender);
-      --text: var(--ctp-latte-text);
-      --subtext1: var(--ctp-latte-subtext1);
-      --subtext0: var(--ctp-latte-subtext0);
-      --overlay2: var(--ctp-latte-overlay2);
-      --overlay1: var(--ctp-latte-overlay1);
-      --overlay0: var(--ctp-latte-overlay0);
-      --surface2: var(--ctp-latte-surface2);
-      --surface1: var(--ctp-latte-surface1);
-      --surface0: var(--ctp-latte-surface0);
-      --base: var(--ctp-latte-base);
-      --mantle: var(--ctp-latte-mantle);
-      --crust: var(--ctp-latte-crust);
-    }
-
-    div.header-nav {
-      margin: 0em 5em 0 5em;
-      padding: 1rem;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-around;
-      align-items: center;
-      border: 2px solid var(--rosewater);
-      border-radius: 12px;
-      background-color: var(--crust);
-
-
-      font-family: "Special Elite", system-ui;
-      font-weight: 400;
-      font-style: normal;
-    
-    }
-
-    a.header-nav {
-      color: var(--text);
-      transition: color 0.5s ease;
-    }
-
-    a.header-nav:hover {
-      color: var(--lavender);
-    }
-
-    a.header-nav:visited {
-      color: var(--lavender);
-    }
-
-    pre.logo {
-      background-color: var(--base);
-      text-align: center;
-    }
-
-    .home-grid {
-      margin: 1em 5em 0em 5em;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 1rem;
-    }
-
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .card {
-      background-color: var(--crust);
-      border: 2px solid var(--rosewater);
-      border-radius: 12px;
-      padding: 1rem;
-    }
-
-    .main-content {
-      background-color: var(--crust);
-      border: 2px solid var(--rosewater);
-      border-radius: 12px;
-      padding: 1rem;
-      min-height: 400px;
-      box-shadow: 0 2px 8px color-mix(in srgb, var(--mantle) 60%, transparent);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    /* Card depth + hover lift */
-    .card {
-      box-shadow: 0 2px 8px color-mix(in srgb, var(--mantle) 60%, transparent);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 14px color-mix(in srgb, var(--mantle) 80%, transparent);
-    }
-
-    /* Card headings */
-    .card h3 {
-      font-family: "Special Elite", system-ui;
-      color: var(--mauve);
-      margin-top: 0;
-    }
-
-    /* Dotted separator under header */
-    header.main {
-      border-bottom: 2px dotted var(--surface1);
-      padding-bottom: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    /* Dotted nav link underlines */
-    a.header-nav {
-      text-decoration: underline dotted var(--surface1);
-      text-underline-offset: 4px;
-    }
-
-    /* "see more" pill link */
-    a.see-more {
-      display: inline-block;
-      padding: 0.15rem 0.6rem;
-      background-color: var(--surface0);
-      border-radius: 999px;
-      font-size: 0.85rem;
-      color: var(--subtext0);
-      text-decoration: none;
-      transition: background-color 0.2s ease, color 0.2s ease;
-    }
-
-    a.see-more:hover {
-      background-color: var(--surface1);
-      color: var(--text);
-    }
-
-    a.see-more:visited {
-      color: var(--subtext0);
-    }
-
-    /* Main content headings */
-    .main-content h2 {
-      font-family: "Special Elite", system-ui;
-      color: var(--mauve);
-    }
-
-    /* Post date */
-    .post-date {
-      font-size: 0.85rem;
-      color: var(--subtext0);
-      margin-top: -0.5rem;
-    }
-
-    /* Social icon links */
-    .social-links {
-      display: flex;
-      gap: 0.75rem;
-    }
-
-    a.social-icon,
-    a.social-icon:visited {
-      color: var(--subtext0);
-      transition: color 0.2s ease, transform 0.2s ease;
-      text-decoration: none;
-    }
-
-    a.social-icon:hover {
-      color: var(--mauve);
-      transform: translateY(-2px);
-    }
-
-    /* Sidebar link list custom markers */
-    .link-list {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .link-list li::before {
-      content: "~ ";
-      color: var(--mauve);
-      font-weight: bold;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 1.5rem 1rem;
-      margin-top: 1.5rem;
-      border-top: 2px dotted var(--surface1);
-    }
-
-    .footer-badges {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.4rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .badge {
-      display: inline-block;
-      width: 88px;
-      height: 31px;
-      line-height: 31px;
-      text-align: center;
-      font-size: 10px;
-      font-family: monospace;
-      border: 1px solid var(--overlay0);
-      background-color: var(--surface0);
-      color: var(--text);
-      text-decoration: none;
-      image-rendering: pixelated;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .badge:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 2px 6px color-mix(in srgb, var(--mantle) 70%, transparent);
-    }
-
-    .badge:visited {
-      color: var(--text);
-    }
-
-    .footer-text {
-      font-size: 0.8rem;
-      color: var(--subtext0);
-      margin: 0;
-    }
-
-    /* === Animated gradient borders === */
-    @keyframes border-cycle {
-      0%   { border-color: var(--rosewater); }
-      25%  { border-color: var(--mauve); }
-      50%  { border-color: var(--pink); }
-      75%  { border-color: var(--lavender); }
-      100% { border-color: var(--rosewater); }
-    }
-
-    .card, .main-content, div.header-nav {
-      animation: border-cycle 8s ease-in-out infinite;
-    }
-
-    /* === Nav link glow on hover === */
-    a.header-nav:hover {
-      text-shadow: 0 0 8px var(--lavender), 0 0 16px color-mix(in srgb, var(--lavender) 40%, transparent);
-    }
-
-    /* === Bobbing theme toggle === */
-    @keyframes bob {
-      0%, 100% { transform: translateY(0); }
-      50%      { transform: translateY(-3px); }
-    }
-
-    .btn-toggle {
-      animation: bob 2.5s ease-in-out infinite;
-    }
-
-    .btn-toggle:hover {
-      animation-play-state: paused;
-    }
-
-    /* === Background floating particles === */
-    @keyframes drift {
-      0%   { transform: translateY(0) translateX(0); opacity: 0; }
-      10%  { opacity: 0.5; }
-      90%  { opacity: 0.5; }
-      100% { transform: translateY(-100vh) translateX(40px); opacity: 0; }
-    }
-
-    .particles {
-      position: fixed;
-      inset: 0;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .particle {
-      position: absolute;
-      bottom: -10px;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--overlay1);
-      opacity: 0;
-      animation: drift linear infinite;
-    }
-
-    .particle:nth-child(1)  { left: 10%; animation-duration: 18s; animation-delay: 0s; }
-    .particle:nth-child(2)  { left: 25%; animation-duration: 22s; animation-delay: 3s; }
-    .particle:nth-child(3)  { left: 40%; animation-duration: 16s; animation-delay: 6s; }
-    .particle:nth-child(4)  { left: 55%; animation-duration: 24s; animation-delay: 1s; }
-    .particle:nth-child(5)  { left: 70%; animation-duration: 20s; animation-delay: 8s; }
-    .particle:nth-child(6)  { left: 85%; animation-duration: 17s; animation-delay: 4s; }
-    .particle:nth-child(7)  { left: 5%;  animation-duration: 21s; animation-delay: 10s; }
-    .particle:nth-child(8)  { left: 50%; animation-duration: 19s; animation-delay: 7s; }
-    .particle:nth-child(9)  { left: 90%; animation-duration: 23s; animation-delay: 2s; }
-    .particle:nth-child(10) { left: 35%; animation-duration: 15s; animation-delay: 5s; }
-
-    /* === Badge marquee scroll === */
-    .footer-badges {
-      overflow: hidden;
-    }
-
-    .badge-track {
-      display: flex;
-      gap: 0.4rem;
-      width: max-content;
-    }
-
-    /* === Typewriter === */
-    @keyframes blink-cursor {
-      0%, 100% { opacity: 1; }
-      50%      { opacity: 0; }
-    }
-
-    pre.logo {
-      min-height: 10em;
-    }
-
-    .typewriter-cursor {
-      display: inline;
-      color: var(--mauve);
-      font-size: 1em;
-      animation: blink-cursor 0.8s step-end infinite;
-    }
-
-    /* === Sparkle trail === */
-    .sparkle {
-      position: fixed;
-      pointer-events: none;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      z-index: 9999;
-      animation: sparkle-fade 0.6s ease-out forwards;
-    }
-
-    @keyframes sparkle-fade {
-      0%   { transform: scale(1); opacity: 1; }
-      100% { transform: scale(0) translateY(-20px); opacity: 0; }
-    }
-
-    /* Respect reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-    </style>
+    <link rel="stylesheet" href="/assets/css/main.css">
 	</head>
 	<body class="light-theme">
     <div class="particles">
@@ -481,22 +25,22 @@
       <div class="particle"></div>
     </div>
 		<header class="main">
-      <pre class="logo"> ███████████  ██████   ██████ █████ █████ ███████████
-░░███░░░░░███░░██████ ██████ ░░███ ░░███ ░░███░░░░░███
- ░███    ░███ ░███░█████░███  ░░███ ███   ░███    ░███
- ░██████████  ░███░░███ ░███   ░░█████    ░██████████
- ░███░░░░░░   ░███ ░░░  ░███    ░░███     ░███░░░░░██
- ░███         ░███      ░███     ░███     ░███    ░███
- █████        █████     █████    █████    █████   █████
-░░░░░        ░░░░░     ░░░░░    ░░░░░    ░░░░░   ░░░░░</pre>
+      <a href="/" style="text-decoration: none; color: inherit;"><pre class="logo">                      ██████     ██████                    ███████████ █████   █████ ██████████ ██████   █████                                          
+                     ███▒▒███   ███▒▒███                  ▒█▒▒▒███▒▒▒█▒▒███   ▒▒███ ▒▒███▒▒▒▒▒█▒▒██████ ▒▒███                                           
+  ██████   ██████   ▒███ ▒▒▒   ▒███ ▒▒▒   ██████   ██████ ▒   ▒███  ▒  ▒███    ▒███  ▒███  █ ▒  ▒███▒███ ▒███   ██████  ████████  █████ ████ █████ █████
+ ███▒▒███ ███▒▒███ ███████    ███████    ███▒▒███ ███▒▒███    ▒███     ▒███████████  ▒██████    ▒███▒▒███▒███  ███▒▒███▒▒███▒▒███▒▒███ ▒███ ▒▒███ ▒▒███ 
+▒███ ▒▒▒ ▒███ ▒███▒▒▒███▒    ▒▒▒███▒    ▒███████ ▒███████     ▒███     ▒███▒▒▒▒▒███  ▒███▒▒█    ▒███ ▒▒██████ ▒███ ▒▒▒  ▒███ ▒▒▒  ▒███ ▒███  ▒▒▒█████▒  
+▒███  ███▒███ ▒███  ▒███       ▒███     ▒███▒▒▒  ▒███▒▒▒      ▒███     ▒███    ▒███  ▒███ ▒   █ ▒███  ▒▒█████ ▒███  ███ ▒███      ▒███ ▒███   ███▒▒▒███ 
+▒▒██████ ▒▒██████   █████      █████    ▒▒██████ ▒▒██████     █████    █████   █████ ██████████ █████  ▒▒█████▒▒██████  █████     ▒▒████████ █████ █████
+ ▒▒▒▒▒▒   ▒▒▒▒▒▒   ▒▒▒▒▒      ▒▒▒▒▒      ▒▒▒▒▒▒   ▒▒▒▒▒▒     ▒▒▒▒▒    ▒▒▒▒▒   ▒▒▒▒▒ ▒▒▒▒▒▒▒▒▒▒ ▒▒▒▒▒    ▒▒▒▒▒  ▒▒▒▒▒▒  ▒▒▒▒▒       ▒▒▒▒▒▒▒▒ ▒▒▒▒▒ ▒▒▒▒▒ </pre></a>
       <nav class="main">
         <div class="header-nav">
-          <a class="header-nav">Blog</a>
-          <a class="header-nav">Gallery</a>
-          <a class="header-nav">Almanach</a>
-          <a class="header-nav">Projects</a>
-          <a class="header-nav">Links</a>
-          <a class="header-nav">About</a>
+          <a class="header-nav" href="/blog/">Blog</a>
+          <a class="header-nav" href="/almanach/">Almanach</a>
+          <a class="header-nav" href="/projects/">Projects</a>
+          <a class="header-nav" href="/gallery/">Gallery</a>
+          <a class="header-nav" href="/links/">Links</a>
+          <a class="header-nav" href="/about/">About</a>
           <button class="btn-toggle">
             <span class="icon-sun">&#9788;</span>
             <span class="icon-moon">&#9789;</span>
@@ -515,7 +59,21 @@
       </nav>
 		</header>
       <main>
-        {{ content }}
+        <div class="home-grid">
+          <aside class="sidebar">
+            {% include "sidebar-about.html" %}
+            {% include "sidebar-links.html" %}
+            {% include "sidebar-todo.html" %}
+          </aside>
+          <section id="swup" class="main-content">
+            <div class="transition-fade">
+              {{ content }}
+            </div>
+          </section>
+          <aside class="sidebar-right">
+            {% include "sidebar-right.html" %}
+          </aside>
+        </div>
       </main>
 
     <footer>
@@ -539,9 +97,9 @@
         const logo = document.querySelector('pre.logo');
         if (!logo) return;
         const fullText = logo.textContent;
-        const speed = 4;
-        const pauseAfterType = 3000;
-        const eraseSpeed = 2;
+        const speed = 1;
+        const pauseAfterType = 30000;
+        const eraseSpeed = 1;
         const pauseAfterErase = 500;
 
         function cycle() {
@@ -610,6 +168,84 @@
         })();
       })();
 
+      // === Coffee steam animation ===
+      (function() {
+        var el = document.getElementById('coffee-steam');
+        if (!el) return;
+        var frames = [
+          '     )  (   \n    (   ) ) \n     ) ( ( \n',
+          '    (  )    \n     ) ( ) \n    ( ) (  \n',
+          '     (  )   \n    ) (  ( \n     ( ) ) \n'
+        ];
+        var i = 0;
+        setInterval(function() {
+          i = (i + 1) % frames.length;
+          el.textContent = frames[i];
+        }, 800);
+      })();
+
+      // === Quote of the day ===
+      (function() {
+        var el = document.getElementById('daily-quote');
+        if (!el) return;
+        var quotes = [
+          '"Kaffee trinken ist integraler Bestandteil des Kletterns" — Wolfgang Güllich',
+          '"Kommet\'se nei, dann könnet\'se rausgucken."',
+          '"Politicians and diapers must be changed often, and for the same reason." — Mark Twain',
+          '"Science is a way of thinking much more than it is a body of knowledge." — Carl Sagan',
+          '"The universe is under no obligation to make sense to you." — Neil deGrasse Tyson',
+          '"The best way to enjoy your job is to imagine yourself without one." - Oscar Wilde',
+          '"I love sleep. My life has the tendency to fall apart when I\'m awake, you know?" - Ernest Hemmingway'
+        ];
+        el.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+      })();
+
+      // === Micro-status (time-based) ===
+      (function() {
+        var el = document.getElementById('micro-status');
+        if (!el) return;
+        var now = new Date().toLocaleString('en-US', { timeZone: 'Europe/Stockholm', hour: 'numeric', minute: 'numeric', hour12: false });
+        var parts = now.split(':');
+        var h = parseInt(parts[0], 10);
+        var m = parseInt(parts[1], 10);
+        var t = h + m / 60; // decimal hours
+        if (t >= 7.5 && t < 17) {
+          el.textContent = 'writing code in stockholm \u2615';
+        } else if (t >= 17 && t < 22) {
+          el.textContent = 'climbing \uD83E\uDDD7';
+        } else {
+          el.textContent = 'sleeping and dreaming \uD83D\uDCA4';
+        }
+      })();
+
+      // === Weather widget ===
+      (function() {
+        var el = document.getElementById('weather-info');
+        if (!el) return;
+        fetch('https://wttr.in/Stockholm?format=j1')
+          .then(function(r) { return r.json(); })
+          .then(function(data) {
+            var current = data.current_condition[0];
+            var temp = current.temp_C;
+            var desc = current.weatherDesc[0].value;
+            var emoji = '🌤';
+            var d = desc.toLowerCase();
+            if (d.includes('rain') || d.includes('drizzle')) emoji = '🌧';
+            else if (d.includes('snow')) emoji = '❄️';
+            else if (d.includes('cloud') || d.includes('overcast')) emoji = '☁️';
+            else if (d.includes('sun') || d.includes('clear')) emoji = '☀️';
+            else if (d.includes('fog') || d.includes('mist')) emoji = '🌫';
+            else if (d.includes('thunder')) emoji = '⛈';
+            el.innerHTML =
+              '<span class="weather-city">Stockholm</span><br>' +
+              '<span class="weather-temp">' + temp + '°C ' + emoji + '</span><br>' +
+              '<span class="weather-condition">' + desc + '</span>';
+          })
+          .catch(function() {
+            el.innerHTML = '<span class="weather-loading">check back later</span>';
+          });
+      })();
+
       // === Cursor sparkle trail ===
       (function() {
         const colors = [
@@ -630,6 +266,14 @@
           setTimeout(function() { sparkle.remove(); }, 600);
         });
       })();
+    </script>
+    <script type="module">
+      import Swup from 'https://unpkg.com/swup@4?module';
+      import SwupHeadPlugin from 'https://unpkg.com/@swup/head-plugin@2?module';
+      const swup = new Swup({
+        containers: ['#swup'],
+        plugins: [new SwupHeadPlugin()]
+      });
     </script>
 	</body>
 </html>
