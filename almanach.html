@@ -4,3 +4,40 @@ title: Almanach - paulmyr
 ---
 
 <h2>Almanach</h2>
+
+{% assign section_title = "Books" %}
+{% assign items = almanach.books %}
+{% include "shelf-section.html" %}
+
+{% assign section_title = "Movies" %}
+{% assign items = almanach.movies %}
+{% include "shelf-section.html" %}
+
+{% assign section_title = "TV Shows" %}
+{% assign items = almanach.tv %}
+{% include "shelf-section.html" %}
+
+<div id="shelf-detail-panel" class="shelf-detail-panel">
+  <div class="shelf-detail-header">
+    <div>
+      <h4 class="shelf-detail-title"></h4>
+      <p class="shelf-detail-creator"></p>
+    </div>
+    <button class="shelf-detail-close" aria-label="Close">&times;</button>
+  </div>
+  <div class="shelf-detail-meta">
+    <span class="shelf-detail-rating"></span>
+    <span class="shelf-detail-date"></span>
+  </div>
+  <div class="shelf-detail-review"></div>
+  <div class="shelf-detail-tags"></div>
+</div>
+
+<p class="tmdb-attribution">
+  <a href="https://www.themoviedb.org/">
+    <img src="/assets/tmdb-logo.svg" alt="TMDB" width="60">
+  </a>
+  Film and TV data from <a href="https://www.themoviedb.org/">TMDB</a>.
+</p>
+
+<script src="/assets/js/almanach.js"></script>

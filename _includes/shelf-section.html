@@ -1,0 +1,23 @@
+<div class="shelf-section">
+  <h3>{{ section_title }}</h3>
+  <div class="shelf-grid">
+    {% for item in items %}
+    <div class="shelf-item"
+         data-title="{{ item.title }}"
+         data-creator="{{ item.creator }}"
+         data-date="{{ item.date }}"
+         data-rating="{{ item.rating }}"
+         data-review="{{ item.review | escape }}"
+         data-tags="{{ item.tags | join: ',' }}">
+      {% if item.cover %}
+        <img src="{{ item.cover }}"
+             alt="{{ item.title }}"
+             loading="lazy"
+             onerror="this.outerHTML='<div class=\'shelf-placeholder\'>{{ item.title }}</div>'">
+      {% else %}
+        <div class="shelf-placeholder">{{ item.title }}</div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
