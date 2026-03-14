@@ -2,9 +2,9 @@
 <div class="widget widget-stats">
   <h4 class="widget-title">site stats</h4>
   <div class="stats-grid">
-    <span class="stat-label">pages:</span><span class="stat-value">3</span>
-    <span class="stat-label">posts:</span><span class="stat-value">1</span>
-    <span class="stat-label">updated:</span><span class="stat-value">2026-02-23</span>
+    <span class="stat-label">pages:</span><span class="stat-value">{{ collections.all | size }}</span>
+    <span class="stat-label">posts:</span><span class="stat-value">{{ collections.post | size }}</span>
+    <span class="stat-label">updated:</span><span class="stat-value">{{ site.buildDate }}</span>
     <span class="stat-label">online since:</span><span class="stat-value">2025</span>
   </div>
 </div>
