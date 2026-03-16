@@ -248,6 +248,7 @@ a.see-more:visited {
 }
 
 /* Main content headings */
+.main-content h1,
 .main-content h2 {
   font-family: "Special Elite", system-ui;
   color: var(--mauve);
