@@ -13,5 +13,5 @@ tags:
 ---
 
 I'm officially a Greig Fraser fan now.
-Beautiful images, wounderful sounddesign. Many homages to other scifi movies, but in a good way.
-I didn't enjoy the dialogues too much, some moments feel a bit rushed and as a friend put it: 50 minutes of move endding on the other hand. But very sweet, good acting and overall a very fun experience.
+Beautiful images, wonderful sound design. Many homages to other sci-fi movies, but in a good way.
+I didn't enjoy the dialogues too much, some moments feel a bit rushed and as a friend put it: 50 minutes of movie ending on the other hand. But very sweet, good acting and overall a very fun experience.
