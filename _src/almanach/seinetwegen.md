@@ -2,7 +2,7 @@
 type: book
 title: "Seinetwegen"
 creator: "Zora del Buono"
-isbn: "9783406822407"
+isbn: "978-3-257-24832-6"
 date: 2026-08-14
 rating: 4
 tags:
